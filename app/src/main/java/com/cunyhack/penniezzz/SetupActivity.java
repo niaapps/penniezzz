@@ -93,6 +93,13 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
 
     }
 
+    @Override
+    public void applyTexts(String a, String b) {
+        timeSet.setText(a);
+        intervals.setText(b);
+
+    }
+
 }
 
 

@@ -19,5 +19,7 @@
     <string name="five"><u>&#36;5,</u></string>
     <string name="twentyfive">or <u>&#36;25.</u></string>
     <string name="currency">All donations are in USD</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 
 </resources>

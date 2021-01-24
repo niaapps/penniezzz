@@ -8,19 +8,19 @@
 
     <TimePicker
         android:id="@+id/timePicker"
+        style="@style/timePickerBlack"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:scaleX="0.90"
         android:scaleY="0.90"
-        android:timePickerMode="clock"
-        style="@style/timePickerBlack"
         android:theme="@style/timePickerBlack"
+        android:timePickerMode="clock"
         app:layout_constraintBottom_toTopOf="@+id/intervalExp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.705" />
 
     <TextView
         android:id="@+id/intervalExp"
@@ -29,14 +29,14 @@
         android:fontFamily="@font/cabin"
         android:padding="18dp"
         android:text="@string/interval_exp"
-        android:textSize="15sp"
         android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintVertical_bias="0.76" />
 
     <TextView
         android:id="@+id/intervalLabel"
@@ -44,14 +44,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/cabin"
         android:text="@string/interval"
-        android:textSize="22sp"
         android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927" />
+        app:layout_constraintVertical_bias="0.864" />
 
     <Spinner
         android:id="@+id/intervalSpinner"
@@ -60,9 +60,24 @@
         android:fontFamily="@font/cabin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toEndOf="@+id/intervalLabel"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.862" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/cabin"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intervalSpinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
