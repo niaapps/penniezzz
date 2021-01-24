@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">PenniezZZ</string>
+    <string name="interval_exp"> Please set the time for your alarm above. Below please enter the amount of time you have to dismiss the alarm. <br></br>If you do not press the dismiss button in time, you will be asked to donate the charity or organization of your choosing.</string>
+    <string name="interval">Interval:</string>
+    <string name="alarm_label">Set Alarm</string>
 </resources>
