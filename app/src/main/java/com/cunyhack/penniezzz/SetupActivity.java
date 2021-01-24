@@ -24,50 +24,50 @@ public class SetupActivity extends AppCompatActivity {
         setContentView(R.layout.main_setup);
         alarmSetup = findViewById(R.id.alarmButton);
 
-//        alarmSetup.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(SetupActivity.this);
-//                View view = getLayoutInflater().inflate(R.layout.alarm_dialog_setup, null);
-//                builder.setTitle("Configure Alarm Settings");
-//                interval = view.findViewById(R.id.intervalSpinner);
-//
-//                ArrayAdapter<String> adapter = new ArrayAdapter<String>(SetupActivity.this,
-//                        android.R.layout.simple_spinner_item,
-//                        getResources().getStringArray(R.array.intervals));
-//
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                interval.setAdapter(adapter);
-//
-//                builder.setPositiveButton("save", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        if (!interval.getSelectedItem().toString().equalsIgnoreCase("Select a Tone")) {
-//                            // give info to go to prev screen
-//                            String choice = interval.getSelectedItem().toString();
-//
-//
-//                            dialog.dismiss();
-//                        }
-//                    }
-//                });
-//
-//                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//                builder.setView(view);
-//                AlertDialog dialog = builder.create();
-//                dialog.show();
-//
-//
-//
-//            }
-//        });
-
         alarmSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SetupActivity.this);
+                View view = getLayoutInflater().inflate(R.layout.alarm_dialog_setup, null);
+                builder.setTitle("Configure Alarm Settings");
+                interval = view.findViewById(R.id.intervalSpinner);
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(SetupActivity.this,
+                        android.R.layout.simple_spinner_item,
+                        getResources().getStringArray(R.array.intervals));
+
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                interval.setAdapter(adapter);
+
+                builder.setPositiveButton("save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (!interval.getSelectedItem().toString().equalsIgnoreCase("Select a Tone")) {
+                            // give info to go to prev screen
+                            String choice = interval.getSelectedItem().toString();
+
+
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.setView(view);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+
+
+            }
+        });
+
+        donateSetup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SetupActivity.this);
