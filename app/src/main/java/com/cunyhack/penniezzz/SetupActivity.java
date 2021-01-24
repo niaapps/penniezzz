@@ -102,9 +102,17 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
 
     }
 
+niabranch
+    @Override
+    public void applyTexts(String a, String b) {
+        timeSet.setText(a);
+        intervals.setText(b);
+}
+
     private void openAlarmActivity() {
         Intent intent = new Intent(this, AlarmActivity.class);
         startActivity(intent);
+master
     }
 
 }
