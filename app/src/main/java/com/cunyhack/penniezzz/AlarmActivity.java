@@ -27,7 +27,7 @@ public class AlarmActivity extends AppCompatActivity {
         currentTime = findViewById(R.id.currentTime);
 //        Finds the ID of the the wakeUp Button and the payUp Button
         wakeUp = findViewById(R.id.wakeUp);
-//        payUp =  findViewById(R.id.payUp);
+        payUp =  findViewById(R.id.payUp);
         configureSettings = findViewById(R.id.configureSettingsButton);
         configureSettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,11 +45,23 @@ public class AlarmActivity extends AppCompatActivity {
             }
         });
 
+        payUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDonationRequestActivity();
+            }
+        });
+
 
         final Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE));
 
 
     }
+
+    private void openDonationRequestActivity() {
+      Intent intent = new Intent(this, DonationRequestActivity.class);
+      startActivity(intent);
+    };
 
     private void openSetupActivity() {
         Intent intent = new Intent(this, SetupActivity.class);
