@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">PenniezZZ</string>
-    <string name="interval_exp"> Please set the time for your alarm above. Below please enter the amount of time you have to dismiss the alarm. <br></br>If you do not press the dismiss button in time, you will be asked to donate the charity or organization of your choosing.</string>
+    <string name="interval_exp"> Please set the time for your alarm above. Below enter the amount of time you"&apos;"ll have to dismiss the alarm. <br></br>If you do not press the dismiss button in time, you will be asked to donate to the charity or organization of your choosing.</string>
     <string name="interval">Interval:</string>
     <string name="alarm_label">Set Alarm</string>
+    <string-array name="intervals">
+        <item>Select one</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>1 min 30s</item>
+        <item>2 minutes</item>
+        <item>2 mins 30s</item>
+        <item>3 minutes</item>
+    </string-array>
+    <string name="dollar">$</string>
+    <string name="donateExp">Please enter how much money you would like to donate. <br></br> The minimum is 10&#x00A2; and the maximum is &#36;50.</string>
+    <string name="suggest">We suggest</string>
+    <string name="ten"><u>&#36;10,</u></string>
+    <string name="five"><u>&#36;5,</u></string>
+    <string name="twentyfive">or <u>&#36;25.</u></string>
+    <string name="currency">All donations are in USD</string>
+
 </resources>

@@ -7,31 +7,37 @@
     android:layout_height="match_parent">
 
     <TimePicker
+
         android:id="@+id/timePicker"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-
+        android:scaleX="0.90"
+        android:scaleY="0.90"
+        android:timePickerMode="clock"
+        style="@style/timePickerBlack"
+        android:theme="@style/timePickerBlack"
         app:layout_constraintBottom_toTopOf="@+id/intervalExp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/intervalExp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cabin"
-        android:padding="20dp"
+        android:padding="18dp"
         android:text="@string/interval_exp"
         android:textSize="15sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.842" />
 
     <TextView
         android:id="@+id/intervalLabel"
@@ -40,12 +46,13 @@
         android:fontFamily="@font/cabin"
         android:text="@string/interval"
         android:textSize="22sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.927" />
 
     <Spinner
         android:id="@+id/intervalSpinner"
@@ -54,9 +61,9 @@
         android:fontFamily="@font/cabin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toEndOf="@+id/intervalLabel"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823" />
+        app:layout_constraintVertical_bias="0.937" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
