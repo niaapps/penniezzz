@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SetupActivity extends AppCompatActivity implements AlarmDialog.AlarmDialogListener, ExampleDialog.ExampleDialogListener  {
         Button alarmSetup;
         Button donateSetup;
+        Button openAlarmButton;
         TimePicker timePicker;
         Spinner interval;
         TextView intervals;
@@ -33,6 +34,14 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         timePicker = findViewById(R.id.timePicker);
         intervals = findViewById(R.id.tv1);
         timeSet = findViewById(R.id.tv2);
+        openAlarmButton = findViewById(R.id.openAlarmButton);
+
+        openAlarmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAlarmActivity();
+            }
+        });
 
 
         alarmSetup.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +100,11 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
     @Override
     public void onYesClicked() {
 
+    }
+
+    private void openAlarmActivity() {
+        Intent intent = new Intent(this, AlarmActivity.class);
+        startActivity(intent);
     }
 
 }

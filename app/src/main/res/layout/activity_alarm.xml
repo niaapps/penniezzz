@@ -23,36 +23,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.262" />
 
-    <Button
-        android:id="@+id/wakeUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wake Up"
-        android:fontFamily="@font/cabin"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541"
-        />
+    <!--    <Button-->
+<!--        android:id="@+id/payUp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Pay Up"-->
+<!--        android:fontFamily="@font/cabin"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textAllCaps="false"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.805"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.541" />-->
 
     <Button
-        android:id="@+id/payUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pay Up"
+        android:id="@+id/wakeUp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:fontFamily="@font/cabin"
-        android:textColor="@color/white"
+        android:text="Wake Up"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541" />
+        app:layout_constraintVertical_bias="0.537" />
 
     <TextView
         android:id="@+id/congratText"
@@ -65,5 +64,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.72" />
+
+    <Button
+        android:id="@+id/configureSettingsButton"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Configure Settings"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
