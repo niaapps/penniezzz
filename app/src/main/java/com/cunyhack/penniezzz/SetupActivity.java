@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SetupActivity extends AppCompatActivity implements AlarmDialog.AlarmDialogListener, ExampleDialog.ExampleDialogListener, CharityDialog.CharityDialogListener  {
+
         Button alarmSetup;
         Button donateSetup;
         Button openAlarmButton;
@@ -26,6 +27,7 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         String time = "";
         String [] info = new String[5];
         Button charitySetup;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,8 +102,10 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
 
     @Override
     public void applyTexts(String a, String b) {
+
            info = passValues(a,b);
 }
+
 
     private void openAlarmActivity() {
         String[] v = info;
@@ -119,7 +123,9 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         String [] values = {a,b};
         return values;
     }
+
 }
+
 
 
 
