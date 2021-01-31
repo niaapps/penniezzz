@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SetupActivity extends AppCompatActivity implements AlarmDialog.AlarmDialogListener, ExampleDialog.ExampleDialogListener  {
+public class SetupActivity extends AppCompatActivity implements AlarmDialog.AlarmDialogListener, ExampleDialog.ExampleDialogListener, CharityDialog.CharityDialogListener  {
         Button alarmSetup;
         Button donateSetup;
         Button openAlarmButton;
@@ -24,7 +24,8 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         TextView intervals;
         TextView timeSet;
         String time = "";
-
+        String [] info = new String[5];
+        Button charitySetup;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,10 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         intervals = findViewById(R.id.tv1);
         timeSet = findViewById(R.id.tv2);
         openAlarmButton = findViewById(R.id.openAlarmButton);
+        donateSetup = findViewById(R.id.donateButton);
+        charitySetup = findViewById(R.id.charityButton);
+        String time="";
+        String interval = "";
 
         openAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,38 +56,19 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
             }
         });
 
+        charitySetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialogCharity();
+            }
+        });
 
-//        donateSetup.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(SetupActivity.this);
-//                View view = getLayoutInflater().inflate(R.layout.donate_dialog_setup, null);
-//                builder.setTitle("Configure Donate Settings");
-//                ;
-//
-//                builder.setPositiveButton("save", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                            dialog.dismiss();
-//
-//                    }
-//                });
-//
-//                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//                builder.setView(view);
-//                AlertDialog dialog = builder.create();
-//                dialog.show();
-//
-//
-//
-//            }
-//        });
+        donateSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
     }
@@ -96,6 +82,11 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
 
         dialog.show(getSupportFragmentManager(), "alarm dialog");
     }
+    public void openDialogCharity() {
+        CharityDialog dialog = new CharityDialog();
+
+        dialog.show(getSupportFragmentManager(), "charity dialog");
+    }
 
     @Override
     public void onYesClicked() {
@@ -103,16 +94,31 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
     }
 
     @Override
+    public void applyTexts(String a) {
+        //charity info, pass
+    }
+
+    @Override
     public void applyTexts(String a, String b) {
-        timeSet.setText(a);
-        intervals.setText(b);
+           info = passValues(a,b);
 }
 
     private void openAlarmActivity() {
+        String[] v = info;
+        String a ="";
+        String b = "";
+        a = v[0];
+        b = v[1];
         Intent intent = new Intent(this, AlarmActivity.class);
+        intent.putExtra("time", a);
+        intent.putExtra("interval",b);
         startActivity(intent);
     }
 
+    public String [] passValues(String a, String b){
+        String [] values = {a,b};
+        return values;
+    }
 }
 
 

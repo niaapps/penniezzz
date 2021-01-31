@@ -21,5 +21,19 @@
     <string name="currency">All donations are in USD</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="charityL">Set Charity</string>
+    <string name="donateL">Set Donation Amount</string>
+    <string-array name="causesOptions">
+        <item>Health</item>
+        <item>Justice</item>
+        <item>Women</item>
+        <item>Education</item>
+        <item>Covid-19</item>
+        <item>Environment</item>
+    </string-array>
+    <string-array name="womensOptions">
+        <item>Planned Parenthood</item>
+        <item>UN Women</item>
+    </string-array>
 
 </resources>

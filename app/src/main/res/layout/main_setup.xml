@@ -4,23 +4,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background">
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:text="@string/alarm_label"
-        android:textAllCaps="false"
-        android:fontFamily="@font/cabin"
-        android:textSize="22sp"
         android:id="@+id/alarmButton"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/cabin"
+        android:shadowColor="#70FFC107"
+        android:text="@string/alarm_label"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309" />
+        app:layout_constraintVertical_bias="0.24" />
 
     <TextView
         android:id="@+id/tv1"
@@ -29,9 +31,10 @@
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alarmButton"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv2"
@@ -40,10 +43,10 @@
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alarmButton"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.359" />
 
     <Button
         android:id="@+id/openAlarmButton"
@@ -56,4 +59,40 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/charityButton"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/cabin"
+        android:text="@string/charityL"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
+
+    <Button
+
+        android:id="@+id/donateButton"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/cabin"
+        android:text="@string/donateL"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="31sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

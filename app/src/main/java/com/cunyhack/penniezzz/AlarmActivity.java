@@ -23,12 +23,22 @@ public class AlarmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
+
+        Intent intent = getIntent();
+        String alarmTime = intent.getStringExtra("time");
+        String alarmInterval = intent.getStringExtra("interval");
+
 //        Finds the ID of the currentTime TextClock
         currentTime = findViewById(R.id.currentTime);
 //        Finds the ID of the the wakeUp Button and the payUp Button
         wakeUp = findViewById(R.id.wakeUp);
         payUp =  findViewById(R.id.payUp);
         configureSettings = findViewById(R.id.configureSettingsButton);
+
+        // need to figure out how to set alarmTime. I don't think textClock can work. may have to do text view and set ringtone to go off when text clock reaches that time.
+        currentTime.setText(alarmTime);
+
+
         configureSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
