@@ -35,5 +35,7 @@
         <item>Planned Parenthood</item>
         <item>UN Women</item>
     </string-array>
+    <string name="currentL">Current Time:</string>
+    <string name="alarmL">Alarm set for:</string>
 
 </resources>
