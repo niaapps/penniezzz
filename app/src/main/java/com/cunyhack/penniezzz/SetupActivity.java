@@ -40,8 +40,6 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         openAlarmButton = findViewById(R.id.openAlarmButton);
         donateSetup = findViewById(R.id.donateButton);
         charitySetup = findViewById(R.id.charityButton);
-        String time="";
-        String interval = "";
 
         openAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
