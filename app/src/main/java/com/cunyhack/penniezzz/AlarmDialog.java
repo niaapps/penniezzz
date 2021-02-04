@@ -63,7 +63,7 @@ public class AlarmDialog  extends AppCompatDialogFragment {
                 }else{
                     time = alarmHours.toString().concat(":").concat(mins).concat(" AM");
                 }
-                listener.applyTexts(time, interval.getSelectedItem().toString());
+                listener.getAlarmInfo(time, interval.getSelectedItem().toString());
                 dismiss();
             }
         });
@@ -76,7 +76,7 @@ public class AlarmDialog  extends AppCompatDialogFragment {
 
     public interface AlarmDialogListener {
         void onYesClicked();
-        void applyTexts(String a, String b);
+        void getAlarmInfo(String a, String b);
     }
     @Override
     public void onAttach(Context context) {

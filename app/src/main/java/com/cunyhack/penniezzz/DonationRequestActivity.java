@@ -6,11 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class DonationRequestActivity extends AppCompatActivity {
 
     Button confirmButton;
     Button declineButton;
+    String amount ="";
+    String org = "";
+    TextView donate;
+    TextView organization;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,16 @@ public class DonationRequestActivity extends AppCompatActivity {
 
         confirmButton = findViewById(R.id.confirmButton);
         declineButton = findViewById(R.id.declineButton);
+        donate = findViewById(R.id.donationAmount);
+        organization = findViewById(R.id.charitySelection);
+
+        Intent intent = getIntent();
+        amount = intent.getStringExtra("donation");
+        amount = "$"+ amount;
+        org = intent.getStringExtra("organization");
+
+        donate.setText(amount);
+        organization.setText(org);
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override

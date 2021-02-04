@@ -15,17 +15,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SetupActivity extends AppCompatActivity implements AlarmDialog.AlarmDialogListener, ExampleDialog.ExampleDialogListener, CharityDialog.CharityDialogListener  {
+public class SetupActivity extends AppCompatActivity implements AlarmDialog.AlarmDialogListener, ExampleDialog.ExampleDialogListener, CharityDialog.CharityDialogListener, DonateDialog.DonateDialogListener {
 
         Button alarmSetup;
         Button donateSetup;
         Button openAlarmButton;
         TimePicker timePicker;
-        Spinner interval;
         TextView intervals;
         TextView timeSet;
-        String time = "";
-        String [] info = new String[5];
+        String [] info = new String[2];
+        String amount, org;
         Button charitySetup;
 
 
@@ -40,6 +39,8 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         openAlarmButton = findViewById(R.id.openAlarmButton);
         donateSetup = findViewById(R.id.donateButton);
         charitySetup = findViewById(R.id.charityButton);
+
+        Intent intent = new Intent(this, DonationRequestActivity.class);
 
         openAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +67,7 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         donateSetup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openDialogDonate();
             }
         });
 
@@ -88,24 +89,39 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         dialog.show(getSupportFragmentManager(), "charity dialog");
     }
 
+    public void openDialogDonate() {
+        DonateDialog dialog = new DonateDialog();
+
+        dialog.show(getSupportFragmentManager(), "donate dialog");
+    }
+
+
     @Override
     public void onYesClicked() {
 
     }
 
     @Override
-    public void applyTexts(String a) {
-        //charity info, pass
+    public void getOrg(String a) {
+
+        org = passValue(a);
+    }
+    @Override
+    public void getDonation(String a) {
+
+        amount = passValue(a);
     }
 
     @Override
-    public void applyTexts(String a, String b) {
+    public void getAlarmInfo(String a, String b) {
 
            info = passValues(a,b);
 }
 
 
     private void openAlarmActivity() {
+        String c = org;
+        String d = amount;
         String[] v = info;
         String a ="";
         String b = "";
@@ -114,12 +130,18 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         Intent intent = new Intent(this, AlarmActivity.class);
         intent.putExtra("time", a);
         intent.putExtra("interval",b);
+        intent.putExtra("organization",c);
+        intent.putExtra("donation",d);
         startActivity(intent);
     }
 
     public String [] passValues(String a, String b){
         String [] values = {a,b};
         return values;
+    }
+    public String passValue(String a){
+
+        return a;
     }
 
 }
