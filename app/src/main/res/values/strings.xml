@@ -26,7 +26,7 @@
     <string-array name="causesOptions">
         <item>Health</item>
         <item>Justice</item>
-        <item>Women's Rights</item>
+        <item>Women"&apos;"s Rights</item>
         <item>Education</item>
         <item>Covid-19</item>
         <item>Environment</item>
@@ -37,5 +37,7 @@
     </string-array>
     <string name="currentL">Current Time:</string>
     <string name="alarmL">Alarm set for:</string>
+    <string name="nowake">So you didn"&apos;"t wake up on time... \n\nBut you can
+still start your day off with some good!</string>
 
 </resources>

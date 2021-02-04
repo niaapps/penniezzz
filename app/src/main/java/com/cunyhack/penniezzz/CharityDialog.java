@@ -56,7 +56,7 @@ public class CharityDialog extends AppCompatDialogFragment {
     }
     public interface CharityDialogListener {
         void onYesClicked();
-        void applyTexts(String a);
+        void getOrg(String a);
 
     }
     @Override
@@ -85,7 +85,7 @@ public class CharityDialog extends AppCompatDialogFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String choice = adapterW.getItem(position);
-                listener.applyTexts(choice);
+                listener.getOrg(choice);
                 alert.dismiss();
             }
         });

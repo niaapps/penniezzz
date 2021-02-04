@@ -29,6 +29,8 @@ public class AlarmActivity extends AppCompatActivity {
     long interval;
     String alarmTime = "";
     String alarmInterval ="";
+    String amount ="";
+    String org = "";
     boolean running = true;
     CountDownTimer intervalTimer;
 
@@ -40,6 +42,8 @@ public class AlarmActivity extends AppCompatActivity {
         Intent intent = getIntent();
         alarmTime = intent.getStringExtra("time");
         alarmInterval = intent.getStringExtra("interval");
+        amount = intent.getStringExtra("donation");
+        org = intent.getStringExtra("organization");
 
 //        Finds the ID of the currentTime TextClock
         currentTime = findViewById(R.id.currentTime);
@@ -112,7 +116,10 @@ public class AlarmActivity extends AppCompatActivity {
         payUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 openDonationRequestActivity();
+
+
             }
         });
 
@@ -122,6 +129,8 @@ public class AlarmActivity extends AppCompatActivity {
 
     private void openDonationRequestActivity() {
       Intent intent = new Intent(this, DonationRequestActivity.class);
+        intent.putExtra("organization",org);
+        intent.putExtra("donation",amount);
       startActivity(intent);
     };
 
@@ -186,5 +195,7 @@ public class AlarmActivity extends AppCompatActivity {
         intervalTimer.cancel();
         running = false;
     }
+
+
 
 }

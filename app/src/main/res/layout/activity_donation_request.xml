@@ -15,8 +15,7 @@
         android:layout_width="349dp"
         android:layout_height="204dp"
         android:fontFamily="@font/cabin"
-        android:text="So you didn't wake up on time... \n\nBut you can
-still start your day off with some good!"
+        android:text="@string/nowake"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,9 +41,8 @@ still start your day off with some good!"
 
     <TextView
         android:id="@+id/donationAmount"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,9 +67,8 @@ still start your day off with some good!"
 
     <TextView
         android:id="@+id/charitySelection"
-        android:layout_width="75dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
