@@ -26,7 +26,7 @@
     <string-array name="causesOptions">
         <item>Health</item>
         <item>Justice</item>
-        <item>Women</item>
+        <item>Women"&apos;"s Rights</item>
         <item>Education</item>
         <item>Covid-19</item>
         <item>Environment</item>
@@ -34,6 +34,26 @@
     <string-array name="womensOptions">
         <item>Planned Parenthood</item>
         <item>UN Women</item>
+    </string-array>
+    <string-array name="healthOptions">
+        <item>St. Jude Children"&apos;"s Hospital</item>
+        <item>American Cancer Society</item>
+    </string-array>
+    <string-array name="justiceOptions">
+        <item>Black Lives Matter</item>
+        <item>ACLU</item>
+    </string-array>
+    <string-array name="eduOptions">
+        <item>Khan"&apos;"s Academy</item>
+        <item>Pencils of Promise</item>
+    </string-array>
+    <string-array name="covidOptions">
+        <item>World Health Organization (WHO)</item>
+        <item>CDC Foundation</item>
+    </string-array>
+    <string-array name="envOptions">
+        <item>Climate Emergency Fund</item>
+        <item>United Nations Environment Programme (UNEP)</item>
     </string-array>
     <string name="currentL">Current Time:</string>
     <string name="alarmL">Alarm set for:</string>
