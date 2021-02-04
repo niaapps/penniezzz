@@ -39,7 +39,7 @@ public class CharityDialog extends AppCompatDialogFragment {
 
                 String value = (String) parent.getItemAtPosition(position);
 
-                if(value.equals("Women")){
+                if(value.equals("Women's Rights")){
                     wList = getActivity().getResources().getStringArray(R.array.womensOptions);
 
                     showSecondDialog(wList);

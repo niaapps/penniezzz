@@ -13,10 +13,9 @@
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:fontFamily="@font/cabin"
-        android:format12Hour="hh:mm"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="100sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,12 +88,12 @@
         app:layout_constraintBottom_toTopOf="@+id/currentTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/alarmlabel"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.622" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/alarmlabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cabin"
