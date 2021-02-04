@@ -58,6 +58,8 @@ public class AlarmDialog  extends AppCompatDialogFragment {
                 if(alarmHours>12){
                     alarmHours = alarmHours-12;
                     time = alarmHours.toString().concat(":").concat(mins).concat(" PM");
+                }else if(alarmHours == 12){
+                    time = alarmHours.toString().concat(":").concat(mins).concat(" PM");
                 }else{
                     time = alarmHours.toString().concat(":").concat(mins).concat(" AM");
                 }
