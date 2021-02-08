@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class DonationRequestActivity extends AppCompatActivity {
 
@@ -16,6 +19,7 @@ public class DonationRequestActivity extends AppCompatActivity {
     String org = "";
     TextView donate;
     TextView organization;
+    double dollars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +33,14 @@ public class DonationRequestActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         amount = intent.getStringExtra("donation");
+        dollars = convertToInt(amount);
+        Log.i("NIA", "amount is: " + dollars);
         amount = "$"+ amount;
         org = intent.getStringExtra("organization");
 
         donate.setText(amount);
         organization.setText(org);
+
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,5 +65,10 @@ public class DonationRequestActivity extends AppCompatActivity {
     private void backToAlarmActivity() {
         Intent intent = new Intent(this, AlarmActivity.class);
         startActivity(intent);
+    }
+
+    public double convertToInt(String i){
+        double d = Double.valueOf(i.trim());
+        return d;
     }
 }
