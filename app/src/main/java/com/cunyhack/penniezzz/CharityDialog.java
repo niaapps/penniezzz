@@ -23,9 +23,7 @@ public class CharityDialog extends AppCompatDialogFragment {
     String[] eduList;
     String[] cList;
     String[] envList;
-
-    git config --global user.name ""
-    git config --global user.email
+//comment
     AlertDialog.Builder secondBuilder;
 
     @Override
