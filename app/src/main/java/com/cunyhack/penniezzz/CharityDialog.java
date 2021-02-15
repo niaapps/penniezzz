@@ -115,15 +115,15 @@ public class CharityDialog extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.org_dialog, null);
 
-        ArrayAdapter<String> adapterW= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,a);
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,a);
         lvO = view.findViewById(R.id.lvOrg);
-        lvO.setAdapter(adapterW);
+        lvO.setAdapter(adapter);
         secondBuilder.setView(view);
         AlertDialog alert = secondBuilder.create();
         lvO.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String choice = adapterW.getItem(position);
+                String choice = adapter.getItem(position);
                 listener.getOrg(choice);
                 alert.dismiss();
             }

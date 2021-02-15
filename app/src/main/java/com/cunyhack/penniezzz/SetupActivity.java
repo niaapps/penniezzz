@@ -127,7 +127,7 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         String b = "";
         a = v[0];
         b = v[1];
-        Intent intent = new Intent(this, AlarmActivity.class);
+        Intent  intent = new Intent(this, AlarmActivity.class);
         intent.putExtra("time", a);
         intent.putExtra("interval",b);
         intent.putExtra("organization",c);
@@ -140,7 +140,6 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         return values;
     }
     public String passValue(String a){
-
         return a;
     }
 

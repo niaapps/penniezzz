@@ -34,7 +34,6 @@ public class DonationRequestActivity extends AppCompatActivity {
         Intent intent = getIntent();
         amount = intent.getStringExtra("donation");
         dollars = convertToInt(amount);
-        Log.i("NIA", "amount is: " + dollars);
         amount = "$"+ amount;
         org = intent.getStringExtra("organization");
 
