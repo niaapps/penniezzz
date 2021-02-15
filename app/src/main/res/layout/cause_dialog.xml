@@ -13,11 +13,6 @@
         tools:layout_editor_absoluteX="289dp"
         tools:layout_editor_absoluteY="299dp"
         android:id="@+id/lvCause">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/cro" />
+        />
     </ListView>
 </RelativeLayout>
