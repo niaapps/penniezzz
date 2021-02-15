@@ -83,6 +83,15 @@ public class AlarmActivity extends AppCompatActivity {
 
                     }else if(currentTime.getText().toString().equals(alarmTime) && !running){
                             ringtone.stop();
+                            boolean once = true;
+                            do{
+                                if(!running){
+                                    openDonationRequestActivity();
+                                    once = false;
+                                }
+                                }while (!once);
+
+
                     }
 
 
