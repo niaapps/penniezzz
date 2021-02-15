@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="289dp"
         tools:layout_editor_absoluteY="299dp"
-        android:id="@+id/lvCause">
-
+        android:id="@+id/lvCause"/>
+  
     </ListView>
 </RelativeLayout>

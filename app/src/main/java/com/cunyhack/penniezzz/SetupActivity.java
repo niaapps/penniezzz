@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -20,6 +21,9 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         Button alarmSetup;
         Button donateSetup;
         Button openAlarmButton;
+        Button alarmButton;
+        Button charityButton;
+        Button donateButton;
         TimePicker timePicker;
         TextView intervals;
         TextView timeSet;
@@ -46,9 +50,25 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
             @Override
             public void onClick(View v) {
                 openAlarmActivity();
+
+                if (!alarmButton.getText().toString().isEmpty() && !charityButton.getText().toString().isEmpty() && !donateButton.getText().toString().isEmpty()){
+                    Toast.makeText(SetupActivity.this,  "Success! Alarm and Donation have been set.", Toast.LENGTH_SHORT).show();
+                }
+
+                else if (alarmButton.getText().toString().isEmpty()) {
+                    Toast.makeText(SetupActivity.this, "You forgot to set your alarm", Toast.LENGTH_LONG).show();
+                }
+
+                else if (charityButton.getText().toString().isEmpty()) {
+                    Toast.makeText(SetupActivity.this, "You forgot to set your desired charity", Toast.LENGTH_LONG).show();
+                }
+
+                else if (donateButton.getText().toString().isEmpty()) {
+                    Toast.makeText(SetupActivity.this, "You forgot to set your desired donation amount", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
-
 
         alarmSetup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,11 +145,11 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         String[] v = info;
         String a ="";
         String b = "";
-        a = v[0];
+        a = v[0]; //intent is an abstract description of an operation to be formed. Context is being given for an action to be done
         b = v[1];
         Intent  intent = new Intent(this, AlarmActivity.class);
         intent.putExtra("time", a);
-        intent.putExtra("interval",b);
+        intent.putExtra("interval",b); //how to move info from one activity to another
         intent.putExtra("organization",c);
         intent.putExtra("donation",d);
         startActivity(intent);
