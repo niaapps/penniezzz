@@ -147,7 +147,7 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         String b = "";
         a = v[0]; //intent is an abstract description of an operation to be formed. Context is being given for an action to be done
         b = v[1];
-        Intent intent = new Intent(this, AlarmActivity.class);
+        Intent  intent = new Intent(this, AlarmActivity.class);
         intent.putExtra("time", a);
         intent.putExtra("interval",b); //how to move info from one activity to another
         intent.putExtra("organization",c);
@@ -160,7 +160,6 @@ public class SetupActivity extends AppCompatActivity implements AlarmDialog.Alar
         return values;
     }
     public String passValue(String a){
-
         return a;
     }
 

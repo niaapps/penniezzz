@@ -115,7 +115,8 @@ public class CharityDialog extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.org_dialog, null);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,a);
+
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,a);
         lvO = view.findViewById(R.id.lvOrg);
         lvO.setAdapter(adapter);
         secondBuilder.setView(view);
