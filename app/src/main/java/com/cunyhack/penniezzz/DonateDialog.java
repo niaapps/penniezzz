@@ -20,7 +20,6 @@ public class DonateDialog extends AppCompatDialogFragment {
     TextView ten;
     TextView twentyFive;
     private DonateDialog.DonateDialogListener listener;
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -55,11 +54,9 @@ public class DonateDialog extends AppCompatDialogFragment {
 
         builder.setPositiveButton("save", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
+            public void onClick(DialogInterface dialog, int which) {}
         });
-        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+        builder .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
             }
@@ -67,13 +64,10 @@ public class DonateDialog extends AppCompatDialogFragment {
 
         return builder.create();
     }
-
     public interface DonateDialogListener {
         void onYesClicked();
-
         void getDonation(String a);
     }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -84,7 +78,6 @@ public class DonateDialog extends AppCompatDialogFragment {
                     + "must implement DonateDialogListener");
         }
     }
-
     @Override
     public void onStart() {
         super.onStart();
@@ -113,5 +106,4 @@ public class DonateDialog extends AppCompatDialogFragment {
 
         }
     }
-
 }

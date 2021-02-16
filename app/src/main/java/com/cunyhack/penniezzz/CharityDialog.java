@@ -23,25 +23,24 @@ public class CharityDialog extends AppCompatDialogFragment {
     String[] eduList;
     String[] cList;
     String[] envList;
-//comment
     AlertDialog.Builder secondBuilder;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         causeList = getActivity().getResources().getStringArray(R.array.causesOptions);
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity()); //alert dialog builder
-        LayoutInflater inflater = getActivity().getLayoutInflater(); //this is the pop up on the screen
-        View view = inflater.inflate(R.layout.cause_dialog, null); //creates view for the user
-        ArrayAdapter<String> adapterC= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,causeList); //the layout of listview
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.cause_dialog, null);
+        ArrayAdapter<String> adapterC= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,causeList);
         builder.setTitle("Choose a Cause");
         lvCause = view.findViewById(R.id.lvCause);
         lvCause.setAdapter(adapterC);
-        builder.setView(view); //shows view to builder
+        builder.setView(view);
         AlertDialog alert = builder.create();
-        lvCause.setOnItemClickListener(new AdapterView.OnItemClickListener() { //OnClickListener tells button what to do
+        lvCause.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) { //Item listener
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String value = (String) parent.getItemAtPosition(position);
 
@@ -91,6 +90,7 @@ public class CharityDialog extends AppCompatDialogFragment {
         });
 
 
+
         return alert;
     }
     public interface CharityDialogListener {
@@ -115,16 +115,15 @@ public class CharityDialog extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.org_dialog, null);
 
-
-        ArrayAdapter<String> adapter= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,a);
+        ArrayAdapter<String> adapterW= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,a);
         lvO = view.findViewById(R.id.lvOrg);
-        lvO.setAdapter(adapter);
+        lvO.setAdapter(adapterW);
         secondBuilder.setView(view);
         AlertDialog alert = secondBuilder.create();
         lvO.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String choice = adapter.getItem(position);
+                String choice = adapterW.getItem(position);
                 listener.getOrg(choice);
                 alert.dismiss();
             }

@@ -74,7 +74,12 @@ public class AlarmActivity extends AppCompatActivity {
                                           public void run() {
 
                                               running =  startTimer(i);
-                                              ringtone.play();
+                                              if(running) {
+                                                  ringtone.play();
+                                              }else{
+                                                  pauseTimer();
+                                                  ringtone.stop();
+                                              }
 
 
                                           }
@@ -82,14 +87,14 @@ public class AlarmActivity extends AppCompatActivity {
                         );
 
                     }else if(currentTime.getText().toString().equals(alarmTime) && !running){
-                            ringtone.stop();
-                            boolean once = true;
-                            do{
-                                if(!running){
-                                    openDonationRequestActivity();
-                                    once = false;
-                                }
-                                }while (!once);
+                        ringtone.stop();
+                        boolean once = true;
+                        do{
+                            if(!running){
+                                openDonationRequestActivity();
+                                once = false;
+                            }
+                        }while (!once);
 
 
                     }
@@ -125,7 +130,8 @@ public class AlarmActivity extends AppCompatActivity {
         payUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                pauseTimer();
+                ringtone.stop();
                 openDonationRequestActivity();
 
 
@@ -137,10 +143,10 @@ public class AlarmActivity extends AppCompatActivity {
     }
 
     private void openDonationRequestActivity() {
-      Intent intent = new Intent(this, DonationRequestActivity.class);
+        Intent intent = new Intent(this, DonationRequestActivity.class);
         intent.putExtra("organization",org);
         intent.putExtra("donation",amount);
-      startActivity(intent);
+        startActivity(intent);
     };
 
     private void openSetupActivity() {
@@ -170,7 +176,7 @@ public class AlarmActivity extends AppCompatActivity {
                 i = 180000;
                 break;
             default: i = 5000;
-            break;
+                break;
 
         }
         return i;
@@ -197,7 +203,7 @@ public class AlarmActivity extends AppCompatActivity {
         }.start();
 
 
-    return running;
+        return running;
 
     }
     private void pauseTimer() {

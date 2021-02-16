@@ -67,7 +67,10 @@ public class DonationRequestActivity extends AppCompatActivity {
     }
 
     public double convertToInt(String i){
-        double d = Double.valueOf(i.trim());
-        return d;
+        if(!i.isEmpty()) {
+            double d = Double.valueOf(i.trim());
+            return d;
+        }
+        return 0;
     }
 }
