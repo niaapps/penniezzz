@@ -18,6 +18,11 @@ public class CharityDialog extends AppCompatDialogFragment {
     ListView lvCause, lvO;
     String [] causeList;
     String[] wList;
+    String[] hList;
+    String[] jList;
+    String[] eduList;
+    String[] cList;
+    String[] envList;
     AlertDialog.Builder secondBuilder;
 
     @Override
@@ -44,12 +49,46 @@ public class CharityDialog extends AppCompatDialogFragment {
 
                     showSecondDialog(wList);
                     alert.dismiss();
-
-
-
                 }
+
+                if(value.equals("Health")){
+                    hList = getActivity().getResources().getStringArray(R.array.healthOptions);
+
+                    showSecondDialog(hList);
+                    alert.dismiss();
+                }
+
+                if(value.equals("Justice")){
+                    jList = getActivity().getResources().getStringArray(R.array.justiceOptions);
+
+                    showSecondDialog(jList);
+                    alert.dismiss();
+                }
+
+                if(value.equals("Education")){
+                    eduList = getActivity().getResources().getStringArray(R.array.eduOptions);
+
+                    showSecondDialog(eduList);
+                    alert.dismiss();
+                }
+
+                if(value.equals("Covid-19")){
+                    cList = getActivity().getResources().getStringArray(R.array.covidOptions);
+
+                    showSecondDialog(cList);
+                    alert.dismiss();
+                }
+
+                if(value.equals("Environment")){
+                    envList = getActivity().getResources().getStringArray(R.array.envOptions);
+
+                    showSecondDialog(envList);
+                    alert.dismiss();
+                }
+
             }
         });
+
 
 
         return alert;

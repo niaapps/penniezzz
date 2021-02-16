@@ -7,8 +7,10 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDialogFragment;
 
@@ -52,11 +54,7 @@ public class DonateDialog extends AppCompatDialogFragment {
 
         builder.setPositiveButton("save", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String amt = amount.getText().toString();
-                listener.getDonation(amt);
-                dialog.dismiss();
-            }
+            public void onClick(DialogInterface dialog, int which) {}
         });
         builder .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
@@ -78,6 +76,34 @@ public class DonateDialog extends AppCompatDialogFragment {
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + "must implement DonateDialogListener");
+        }
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        AlertDialog d = (AlertDialog) getDialog();
+        if (d != null) {
+            Button positiveButton = (Button) d.getButton(Dialog.BUTTON_POSITIVE);
+            positiveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Boolean closeDialog = false;
+                    if(amount.getText().toString().isEmpty()) {
+                        amount.setError("Please enter an amount");
+                        Toast.makeText(v.getContext(), "Please enter an amount.", Toast.LENGTH_SHORT).show();
+
+                    }else if(!amount.getText().toString().isEmpty()){
+                        String amt = amount.getText().toString();
+                        listener.getDonation(amt);
+                        closeDialog = true;
+                    }
+
+                    if (closeDialog){dismiss();}
+
+                    //else dialog stays open. Make sure you have an obvious way to close the dialog especially if you set cancellable to false.
+                }
+            });
+
         }
     }
 }
